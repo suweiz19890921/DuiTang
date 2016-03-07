@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  DuiTang
+//
+//  Created by Monky on 16/3/7.
+//  Copyright © 2016年 Monky. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#define MAS_SHORTHAND
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#define SCRW [UIScreen mainScreen].bounds.size.width
+#define SCRH [UIScreen mainScreen].bounds.size.height
+#define BTNH 48
+#define NAVH 44
+#define TabbarH 49
+
+
+#define DTMAINCOLOR [UIColor colorWithRed:0.91 green:0.30 blue:0.24 alpha:1.000]
+#define DTTEXTCOLOR [UIColor colorWithWhite:0.600 alpha:1.000]
+#define DTDETAILCOLOR [UIColor colorWithWhite:0.800 alpha:1.000]
+
+#endif /* PrefixHeader_pch */
