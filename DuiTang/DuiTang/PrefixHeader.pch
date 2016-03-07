@@ -14,6 +14,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+#define BASEURL @"wwww.baidu.com"
+
 #define MAS_SHORTHAND
 //define this constant if you want to enable auto-boxing for default syntax
 #define MAS_SHORTHAND_GLOBALS
@@ -33,4 +35,6 @@
 #define DTTEXTCOLOR [UIColor colorWithWhite:0.600 alpha:1.000]
 #define DTDETAILCOLOR [UIColor colorWithWhite:0.800 alpha:1.000]
 
+
+//api
 #endif /* PrefixHeader_pch */
