@@ -33,7 +33,7 @@
     [self addChildVC:group title:@"发现" image:@"tab_icon_explore" selectedImage:@"tab_icon_explore_highlight"];
     
     DTStoreViewController *job = [[DTStoreViewController alloc]init];
-    [self addChildVC:job title:@"商店" image:@"tab_icon_store" selectedImage:@"tab_icon_store_highlight"];
+    [self addChildVC:job title:@"阅读" image:@"tab_icon_store" selectedImage:@"tab_icon_store_highlight"];
     
     DTMineViewController *mine = [[DTMineViewController alloc]init];
     [self addChildVC:mine title:@"我" image:@"tab_icon_me" selectedImage:@"tab_icon_me_highlight"];

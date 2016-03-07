@@ -14,12 +14,14 @@
 
 @implementation DTStoreViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
         self.view.backgroundColor = [UIColor colorWithRed:0.539 green:0.683 blue:1.000 alpha:1.000];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
