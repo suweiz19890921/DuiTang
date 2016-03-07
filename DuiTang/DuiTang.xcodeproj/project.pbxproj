@@ -19,7 +19,6 @@
 		D1E0E7211C8D320300D7DBD7 /* DTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7201C8D320300D7DBD7 /* DTHomeViewController.m */; };
 		D1E0E7241C8D321D00D7DBD7 /* DTDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7231C8D321D00D7DBD7 /* DTDiscoverViewController.m */; };
 		D1E0E7271C8D322700D7DBD7 /* DTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7261C8D322700D7DBD7 /* DTMineViewController.m */; };
-		D1E0E72A1C8D323100D7DBD7 /* DTStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7291C8D323100D7DBD7 /* DTStoreViewController.m */; };
 		D1E0E7C51C8D407D00D7DBD7 /* NSDate+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E72F1C8D407D00D7DBD7 /* NSDate+Formatter.m */; };
 		D1E0E7C61C8D407D00D7DBD7 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7311C8D407D00D7DBD7 /* NSDate+Helper.m */; };
 		D1E0E7C71C8D407D00D7DBD7 /* NSDate+Reporting.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7331C8D407D00D7DBD7 /* NSDate+Reporting.m */; };
@@ -88,6 +87,9 @@
 		D1E0E8061C8D407D00D7DBD7 /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7C21C8D407D00D7DBD7 /* NSMutableString+TagReplace.m */; };
 		D1E0E8071C8D407D00D7DBD7 /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7C41C8D407D00D7DBD7 /* NSString+WPAttributedMarkup.m */; };
 		D1E0E80A1C8D409000D7DBD7 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E8091C8D409000D7DBD7 /* UIView+Extension.m */; };
+		FCD96A341C8D6A2A004C3BC6 /* DTStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */; };
+		FCD96A371C8D6A4B004C3BC6 /* DTReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */; };
+		FCD96A3B1C8D7103004C3BC6 /* DTNetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A3A1C8D7103004C3BC6 /* DTNetHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,8 +135,6 @@
 		D1E0E7231C8D321D00D7DBD7 /* DTDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTDiscoverViewController.m; sourceTree = "<group>"; };
 		D1E0E7251C8D322700D7DBD7 /* DTMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMineViewController.h; sourceTree = "<group>"; };
 		D1E0E7261C8D322700D7DBD7 /* DTMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTMineViewController.m; sourceTree = "<group>"; };
-		D1E0E7281C8D323100D7DBD7 /* DTStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTStoreViewController.h; sourceTree = "<group>"; };
-		D1E0E7291C8D323100D7DBD7 /* DTStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTStoreViewController.m; sourceTree = "<group>"; };
 		D1E0E72B1C8D403200D7DBD7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D1E0E72E1C8D407D00D7DBD7 /* NSDate+Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatter.h"; sourceTree = "<group>"; };
 		D1E0E72F1C8D407D00D7DBD7 /* NSDate+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatter.m"; sourceTree = "<group>"; };
@@ -272,6 +272,12 @@
 		D1E0E7C41C8D407D00D7DBD7 /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
 		D1E0E8081C8D409000D7DBD7 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		D1E0E8091C8D409000D7DBD7 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		FCD96A301C8D6A2A004C3BC6 /* DTStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTStoreViewController.h; sourceTree = "<group>"; };
+		FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTStoreViewController.m; sourceTree = "<group>"; };
+		FCD96A351C8D6A4B004C3BC6 /* DTReadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTReadModel.h; sourceTree = "<group>"; };
+		FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTReadModel.m; sourceTree = "<group>"; };
+		FCD96A391C8D7103004C3BC6 /* DTNetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNetHelper.h; sourceTree = "<group>"; };
+		FCD96A3A1C8D7103004C3BC6 /* DTNetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNetHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,8 +442,9 @@
 		D1E0E7191C8D308F00D7DBD7 /* Store(商店) */ = {
 			isa = PBXGroup;
 			children = (
-				D1E0E7281C8D323100D7DBD7 /* DTStoreViewController.h */,
-				D1E0E7291C8D323100D7DBD7 /* DTStoreViewController.m */,
+				FCD96A2F1C8D6A2A004C3BC6 /* Controller */,
+				FCD96A321C8D6A2A004C3BC6 /* Model */,
+				FCD96A331C8D6A2A004C3BC6 /* View */,
 			);
 			path = "Store(商店)";
 			sourceTree = "<group>";
@@ -445,6 +452,7 @@
 		D1E0E71A1C8D308F00D7DBD7 /* Libs(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				FCD96A381C8D70C8004C3BC6 /* network */,
 				D1E0E72C1C8D407D00D7DBD7 /* Addition */,
 			);
 			path = "Libs(第三方)";
@@ -742,6 +750,40 @@
 			path = WPAttributedMarkup;
 			sourceTree = "<group>";
 		};
+		FCD96A2F1C8D6A2A004C3BC6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FCD96A301C8D6A2A004C3BC6 /* DTStoreViewController.h */,
+				FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FCD96A321C8D6A2A004C3BC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCD96A351C8D6A4B004C3BC6 /* DTReadModel.h */,
+				FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCD96A331C8D6A2A004C3BC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCD96A381C8D70C8004C3BC6 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				FCD96A391C8D7103004C3BC6 /* DTNetHelper.h */,
+				FCD96A3A1C8D7103004C3BC6 /* DTNetHelper.m */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -932,6 +974,7 @@
 				D1E0E7EF1C8D407D00D7DBD7 /* UIImageView+Letters.m in Sources */,
 				D1E0E7EA1C8D407D00D7DBD7 /* UIImage+RoundedCorner.m in Sources */,
 				D1E0E7DE1C8D407D00D7DBD7 /* UIButton+BackgroundColor.m in Sources */,
+				FCD96A3B1C8D7103004C3BC6 /* DTNetHelper.m in Sources */,
 				D1E0E7FB1C8D407D00D7DBD7 /* UIView+Borders.m in Sources */,
 				D1E0E7D71C8D407D00D7DBD7 /* NSString+Trims.m in Sources */,
 				D1E0E7FE1C8D407D00D7DBD7 /* UIView+Screenshot.m in Sources */,
@@ -953,6 +996,7 @@
 				D1E0E7C81C8D407D00D7DBD7 /* NSDate+Utilities.m in Sources */,
 				D1E0E7C61C8D407D00D7DBD7 /* NSDate+Helper.m in Sources */,
 				D1E0E8001C8D407D00D7DBD7 /* UIView+Shake.m in Sources */,
+				FCD96A371C8D6A4B004C3BC6 /* DTReadModel.m in Sources */,
 				D1E0E7E61C8D407D00D7DBD7 /* UIImage+Color.m in Sources */,
 				D1E0E7F31C8D407D00D7DBD7 /* UINavigationController+JZExtension.m in Sources */,
 				D1E0E7D61C8D407D00D7DBD7 /* NSString+Size.m in Sources */,
@@ -982,7 +1026,6 @@
 				D1E0E8051C8D407D00D7DBD7 /* UIViewController+MJPopupViewController.m in Sources */,
 				D1E0E7CD1C8D407D00D7DBD7 /* NSObject+AppInfo.m in Sources */,
 				D1E0E7FF1C8D407D00D7DBD7 /* UIView+Shadow.m in Sources */,
-				D1E0E72A1C8D323100D7DBD7 /* DTStoreViewController.m in Sources */,
 				D1E0E7DA1C8D407D00D7DBD7 /* NSTimer+Blocks.m in Sources */,
 				D1E0E7CE1C8D407D00D7DBD7 /* NSObject+AutoCoding.m in Sources */,
 				D1E0E7DC1C8D407D00D7DBD7 /* UIApplication+ApplicationSize.m in Sources */,
@@ -996,6 +1039,7 @@
 				D1E0E8041C8D407D00D7DBD7 /* UIViewController+BackButtonItemTitle.m in Sources */,
 				D1E0E8061C8D407D00D7DBD7 /* NSMutableString+TagReplace.m in Sources */,
 				D1E0E7D41C8D407D00D7DBD7 /* NSString+MD5.m in Sources */,
+				FCD96A341C8D6A2A004C3BC6 /* DTStoreViewController.m in Sources */,
 				D1E0E7D51C8D407D00D7DBD7 /* NSString+RegexCategory.m in Sources */,
 				D1E0E7F21C8D407D00D7DBD7 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				D1E0E7ED1C8D407D00D7DBD7 /* UIImageView+BetterFace.m in Sources */,
