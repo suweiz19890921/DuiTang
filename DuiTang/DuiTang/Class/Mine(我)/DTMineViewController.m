@@ -11,7 +11,9 @@
 @interface DTMineViewController ()
 
 @end
-
+/**
+ *  <#Description#>
+ */
 @implementation DTMineViewController
 
 - (void)viewDidLoad {
