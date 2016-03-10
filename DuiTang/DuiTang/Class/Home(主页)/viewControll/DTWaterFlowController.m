@@ -154,7 +154,8 @@
     
     detailVc.urlStr = urlStr;
     detailVc.hidesBottomBarWhenPushed = YES;
-    NSLog(@"%@",urlStr);
+    //NSLog(@"%@",model.cid);
+    //NSLog(@"%@",urlStr);
     [self.navigationController pushViewController:detailVc animated:YES];
     
 }

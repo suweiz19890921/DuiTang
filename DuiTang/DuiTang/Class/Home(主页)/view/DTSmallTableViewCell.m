@@ -80,4 +80,13 @@
     self.readLabel.frame = model .dyInfoFrame;
 }
 
+//-(void)setFrame:(CGRect)frame
+//{
+//    frame.origin.x=12;
+//    frame.origin.y +=12;
+//    frame.size.width-=2*12;
+////    frame.size.height = 12;
+//    [super setFrame:frame];
+//}
+
 @end

@@ -10,29 +10,61 @@
 #import "DTNetHelper.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
+#import "DTDetailFrame.h"
+#import "DTDetailHeadView.h"
+#import "DTRelated.h"
 
-#include "DTDetail.h"
+#import "DTDetailSpecialView.h"
 
-@interface DTDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,weak)UITableView *tableView;
+
+#import "UIImageView+webcache.h"
+
+#import "DTDetail.h"
+
+@interface DTDetailViewController ()<UIScrollViewDelegate>
+@property (nonatomic,weak)UIScrollView *scrollView;
+@property (nonatomic ,strong)DTDetailFrame *detailF;
 @end
 
 @implementation DTDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupTableView];
+    self.view.backgroundColor = [UIColor whiteColor];
+  
     [self loadData];
    
 }
--(void)setupTableView
+-(void)setupSubviews
 {
-    UITableView *tableView = [[UITableView alloc]init];
-    [self.view addSubview:tableView];
-    self.tableView = tableView;
-    self.tableView.frame = self.view.bounds;
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    UIScrollView *scrollView = [[UIScrollView alloc]init];
+    [self.view addSubview:scrollView];
+    self.scrollView = scrollView;
+    scrollView.frame = (CGRect){{0,64,},self.view.bounds.size };
+    
+    DTDetailHeadView *headView = [[DTDetailHeadView alloc]init];
+    headView.modelF = self.detailF;
+
+    [self.scrollView addSubview:headView];
+    
+    //专辑视图
+    DTDetailSpecialView *specialView = [[DTDetailSpecialView alloc]init];
+    [self.scrollView addSubview:specialView];
+    specialView.model = self.detailF;
+
+    
+    specialView.backgroundColor = [UIColor redColor];
+    
+    
+    CGFloat maxContentSize = self.detailF.maxHeight;
+    if (maxContentSize<= mainScreenheight) {
+        maxContentSize = mainScreenheight+homePedding*2;
+    }else {
+        maxContentSize = maxContentSize +(3*homePedding);
+    }
+    self.scrollView.contentSize = CGSizeMake(0, maxContentSize);
+    
+    
 }
 
 -(void)loadData
@@ -41,33 +73,24 @@
         if (success) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:nil];
             NSDictionary *dataDict = dict[@"data"];
+            //NSLog(@"%@",dataDict);
             DTDetail *detail = [DTDetail mj_objectWithKeyValues:dataDict];
-            NSLog(@"%@",detail.sender.username);
+            DTDetailFrame *detailF = [[DTDetailFrame alloc]init];
+            detailF.detail = detail;
+            self.detailF = detailF;
+            
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self.tableView reloadData];
-                [self.tableView.mj_header endRefreshing];
+                [self setupSubviews];
             });
         }
-        
         
     }];
     
 }
+
 #pragma mark UITableViewDataSource  UITableViewDelegate
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10;
-}
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-
-{
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = @"茉莉花";
-    return cell;
-}
 
 
 @end

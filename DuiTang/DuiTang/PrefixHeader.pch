@@ -46,7 +46,7 @@
 
 //详情
 static NSString *detailStr1 = @"http://221.228.82.178/napi/blog/detail/?screen_width=1080&blog_";
-static NSString *detailStr2 = @"405011062&screen_height=1920&app_version=70&platform_version=5.0.2&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&include_fields=share_links_2%2Ctags%2Crelated_albums%2Crelated_albums.covers%2Ctop_like_users%2Ctop_comments%2Cextra_html&locale=zh&app_code=nayutas";
+static NSString *detailStr2 = @"&screen_height=1920&app_version=70&platform_version=5.0.2&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&include_fields=share_links_2%2Ctags%2Crelated_albums%2Crelated_albums.covers%2Ctop_like_users%2Ctop_comments%2Cextra_html&locale=zh&app_code=nayutas";
 
  //广告
 static NSString *topStr1 = @"http://www.duitang.com/napi/topic/detail/?screen_width=1080&screen_height=1920&app_version=70&platform_version=5.0.2&platform_name=Android&device_platform=Redmi%2BNote%2B2&topic_";
@@ -63,9 +63,11 @@ static NSString *bigStr2 = @"&include_fields=share_links&locale=zh&app_code=nayu
 //#define waterFlowStr @"http://203.80.144.213/napi/blog/list/by_album/?screen_width=1080&app_version=70&start=0&locale=zh&screen_height=1920&platform_version=5.0.2&__dtac=%257B%257D&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&album_id=//%@//&include_fields=sender%2Calbum%2Cicon_url%2Creply_count%2Clike_count%2Ctop_comments%2Ctop_like_users&app_code=nayutas"
 
 static NSString *str1 = @"http://203.80.144.213/napi/blog/list/by_album/?screen_width=1080&app_version=70&start=0&locale=zh&screen_height=1920&platform_version=5.0.2&__dtac=%257B%257D&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&album_";
-static  NSString * str2=@"id=%@";
+
  static NSString *str3 = @"&include_fields=sender%2Calbum%2Cicon_url%2Creply_count%2Clike_count%2Ctop_comments%2Ctop_like_users&app_code=nayutas";
 #define mainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define mainScreenheight [UIScreen mainScreen].bounds.size.height
+
 #define maxColum 2
 // 颜色
 #define DTColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

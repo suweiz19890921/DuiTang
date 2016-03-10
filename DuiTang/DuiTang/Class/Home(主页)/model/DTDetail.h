@@ -34,5 +34,8 @@
 @property (strong ,nonatomic) NSString * sender_id;
 
 
+@property (nonatomic ,strong)NSArray *related_albums;
+
+
 
 @end
