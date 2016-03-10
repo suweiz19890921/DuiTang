@@ -36,7 +36,8 @@
          titleLabel.backgroundColor = [UIColor yellowColor];
         
         UIScrollView *scroll = [[UIScrollView alloc]init];
-        scroll.userInteractionEnabled = NO;
+        scroll.userInteractionEnabled = YES;
+        //[scroll removeGestureRecognizer:scroll.panGestureRecognizer];
         scroll.backgroundColor = [UIColor yellowColor];
         [self addSubview:scroll];
         self.scroll = scroll;

@@ -16,7 +16,7 @@
 
 #define specialCount 3
 
-@interface DTDetailImageView ()<UIGestureRecognizerDelegate>
+@interface DTDetailImageView ()
 @property (nonatomic,weak) UILabel *nameLabel;
 @property (nonatomic,weak) UILabel *usernameLabel;
 
@@ -41,8 +41,8 @@
         usernameLabel.font = [UIFont systemFontOfSize:11];
         self.userInteractionEnabled = YES;
 
-       UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panClick:)];
-        [self addGestureRecognizer:pan];
+       UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(panClick:)];
+        [self addGestureRecognizer:tap];
         
     }
     return self;
@@ -54,7 +54,7 @@
 //}
 //
 
--(void)panClick:(UIPanGestureRecognizer *)pan
+-(void)panClick:(UITapGestureRecognizer *)pan
 
 {
     NSLog(@"panClick  panClick  panClick");
@@ -83,12 +83,6 @@
 }
 
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    if ([gestureRecognizer.view isKindOfClass:[DTDetailImageView class]] ) {
-        return NO;
-    }
-    return YES;
-}
+
 
 @end
