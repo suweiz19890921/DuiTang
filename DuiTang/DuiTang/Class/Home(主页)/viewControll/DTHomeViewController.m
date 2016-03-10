@@ -113,6 +113,9 @@
                     
                     DTBigModelFrame *bFrame = [[DTBigModelFrame alloc]init];
                     bFrame.model = model;
+                    if ([model.dynamic_info isEqualToString:@"推广"]) {
+                        [self.headArray addObject:bFrame];
+                    }
                     
                     [marr addObject:bFrame];
                 }else
@@ -124,11 +127,11 @@
                 }
             }
             [self.headArray addObject:marr[0]];
-            [self.headArray addObject:marr[1]];
+           
 //             [self.headArray addObject:marr[2]];
             
-            [marr removeObject:marr[0]];
-            [marr removeObject:marr[0]];
+            
+            [marr removeObjectsInArray:self.headArray];
 //            [marr removeObject:marr[0]];
             DTHeadViewController *hVc = [self.childViewControllers firstObject];
             hVc.modelArray = self.headArray;
@@ -242,6 +245,9 @@
         DTHomeModel *model = modelF.model;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //从模型的target中截取字符串
+        if ([model.content_type isEqualToString:@"topic"]) {
+            NSLog(@"topic");
+        }else {
     
     
     NSString *str = [self stringWithSourceString:model.target];
@@ -255,6 +261,7 @@
         [self.navigationController pushViewController:water animated:YES];
         
         }
+    }
     
 }
 

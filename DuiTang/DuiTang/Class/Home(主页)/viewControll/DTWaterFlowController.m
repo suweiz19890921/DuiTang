@@ -17,6 +17,7 @@
 #import "DTWaterFlowCell.h"
 #import "DTPhoto.h"
 
+#import "DTReusableView.h"
 #import "DTDetailViewController.h"
 
 @interface DTWaterFlowController ()<UICollectionViewDataSource,XMGWaterflowLayoutDelegate,UICollectionViewDelegate>
@@ -36,8 +37,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self setupColltionView];
+    
     // Do any additional setup after loading the view.
+    [self loadData];
+    [self setupColltionView];
     [self setupRefresh];
 }
 
@@ -45,6 +48,7 @@
 {
     self.coll.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadData];
+        
     }];
     [self.coll.mj_header beginRefreshing];
 }
@@ -86,12 +90,16 @@
                 [marr addObject:frameModel];
                 
             }
-            [self.modelArray addObjectsFromArray:marr];
+            
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [self.coll reloadData];
+                
                 [self.coll.mj_header endRefreshing];
+                [self.modelArray addObjectsFromArray:marr];
+                
+                [self.coll reloadData];
+                
             });
         }
         
@@ -128,6 +136,12 @@
 }
 
 
+
+
+
+
+
+
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -145,6 +159,10 @@
 }
 
 
+
+
+
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DTWaterFrame *modelF = self.modelArray[indexPath.item];
@@ -159,4 +177,61 @@
     [self.navigationController pushViewController:detailVc animated:YES];
     
 }
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+
+
+
+//分组头,分组尾视图
+//1.要显示什么的头部视图
+//2.要显示什么样的尾部视图
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    /*
+     UICollectionReusableView * resueView = [[UICollectionReusableView alloc] init];
+     resueView.backgroundColor = [UIColor greenColor];
+     return resueView;
+     */
+    
+    //UICollectionElementKindSectionHeader 分组头
+    //UICollectionElementKindSectionFooter 分组尾
+    UICollectionReusableView * reView = nil;
+    
+    if([kind isEqualToString:UICollectionElementKindSectionHeader])
+    {
+        //注册,分组头
+        [collectionView registerClass:[DTReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
+        //在缓存池中找,是否存在可重用的分组头部视图,如果有返回,如果没有创建一个新的返回
+        reView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+        //设置背景颜色
+        reView.backgroundColor = [UIColor greenColor];
+        
+    }
+    else if ([kind isEqualToString:UICollectionElementKindSectionFooter])
+    {
+        [collectionView registerClass:[DTReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
+        
+        reView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
+        reView.backgroundColor = [UIColor grayColor];
+        
+    }
+    
+    return reView;
+    
+    
+}//end method
+
+//设置分组头部显示的size
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(375, 200);
+}
+
+
+
+
 @end
