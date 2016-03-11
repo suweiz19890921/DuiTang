@@ -184,4 +184,14 @@ static const UIEdgeInsets XMGDefaultEdgeInsets = {10, 10, 10, 10};
     return CGSizeMake(0, self.contentHeight + self.edgeInsets.bottom);
 }
 
+
+-(UICollectionViewLayoutAttributes *)initialLayoutAttributesForAppearingItemAtIndexPath:(NSIndexPath *)itemIndexPath
+{
+    UICollectionViewLayoutAttributes *attr = [self layoutAttributesForItemAtIndexPath:itemIndexPath];
+    
+    attr.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(0.2, 0.2), M_PI);
+    attr.center = CGPointMake(CGRectGetMidX(self.collectionView.bounds), CGRectGetMaxY(self.collectionView.bounds));
+    
+    return attr;
+}
 @end

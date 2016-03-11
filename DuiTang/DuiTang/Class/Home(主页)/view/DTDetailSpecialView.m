@@ -33,14 +33,16 @@
         titleLabel.text = @"收集到以下专辑";
         titleLabel.font = [UIFont boldSystemFontOfSize:16];
         self.titleLabel = titleLabel;
-         titleLabel.backgroundColor = [UIColor yellowColor];
+         titleLabel.backgroundColor = [UIColor whiteColor];
         
         UIScrollView *scroll = [[UIScrollView alloc]init];
         scroll.userInteractionEnabled = YES;
         //[scroll removeGestureRecognizer:scroll.panGestureRecognizer];
-        scroll.backgroundColor = [UIColor yellowColor];
+        scroll.backgroundColor = [UIColor whiteColor];
         [self addSubview:scroll];
         self.scroll = scroll;
+        scroll.showsHorizontalScrollIndicator = NO;
+        scroll.showsVerticalScrollIndicator = NO;
         [self addGestureRecognizer:scroll.panGestureRecognizer];
     }
     return self;

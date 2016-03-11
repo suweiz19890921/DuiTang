@@ -56,7 +56,7 @@
     specialView.model = self.detailF;
 
     
-    specialView.backgroundColor = [UIColor redColor];
+    specialView.backgroundColor = DTGlobalBg;
     
     
     CGFloat maxContentSize = self.detailF.maxHeight;

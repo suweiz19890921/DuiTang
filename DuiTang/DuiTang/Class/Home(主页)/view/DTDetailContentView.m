@@ -59,10 +59,10 @@
         littleContent.numberOfLines = 0;
         littleContent.font = titleFont;
         
-        UIImageView *littleImage = [[UIImageView alloc]init];
-        [self addSubview:littleImage];
-        littleImage.image = [UIImage imageNamed:@"ToolViewInputTextHL"];
-        self.littleImage = littleImage;
+//        UIImageView *littleImage = [[UIImageView alloc]init];
+//        [self addSubview:littleImage];
+//        littleImage.image = [UIImage imageNamed:@"ToolViewInputTextHL"];
+//        self.littleImage = littleImage;
         
     }
     return self;
@@ -90,7 +90,7 @@
     self.littleContent .frame = model.littleContentFrame;
     self.littleContent.text = str;
     
-    self.littleImage.frame = model.littleImageFrame;
+   
     
     
     

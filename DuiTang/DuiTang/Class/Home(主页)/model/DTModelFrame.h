@@ -12,5 +12,6 @@
 @interface DTModelFrame : DTBaseFrame
 
 @property (nonatomic ,strong)DTHomeModel *model;
+@property (nonatomic ,assign)CGRect originalFrame;
 
 @end

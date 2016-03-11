@@ -8,8 +8,8 @@
 
 #import "DTModelFrame.h"
 #import "DTHomeModel.h"
-#define maxWidth [UIScreen mainScreen] .bounds.size.width-90
 
+#define marginLeft 5
 
 @implementation DTModelFrame
 
@@ -33,16 +33,22 @@
 {
     _model = model;
     
+    CGFloat oriX = marginLeft;
+    CGFloat oriY = homePedding;
+    CGFloat oriW = mainScreenWidth-(2*marginLeft);
+    CGFloat oriH = 0;
+
+    
     CGFloat imageW = 80;
     CGFloat imageH = 80;
-    if ([model.style isEqualToString:@"large"]) {
-        imageW = 350;
-        imageH = 200;
-        
-    }
-    
-        CGFloat imageX = homePedding;
-        CGFloat imageY = homePedding;
+//    if ([model.style isEqualToString:@"large"]) {
+//        imageW = 350;
+//        imageH = 200;
+//        
+//    }
+//    
+        CGFloat imageX = 0;
+        CGFloat imageY = 0;
     
         self.iconFrame= CGRectMake(imageX, imageY, imageW, imageH);
     
@@ -50,24 +56,27 @@
     
         CGFloat titleX = homePedding+CGRectGetMaxX(self.iconFrame);
         CGFloat titleY = imageY;
-    CGSize titleSize = [self sizeWithFont:titleFont maxW:maxWidth str:model.des];
+    CGSize titleSize = [self sizeWithFont:titleFont maxW:oriW-imageW str:model.des];
     self.titleFrame = (CGRect){{titleX,titleY},titleSize};
     
     
         CGFloat contentX = titleX;
     CGFloat contentY = homePedding+CGRectGetMaxY(self.titleFrame);
-       CGSize contentSize = [self sizeWithFont:otherFont maxW:maxWidth str:model.stitle];
+       CGSize contentSize = [self sizeWithFont:otherFont maxW:oriW-imageW str:model.stitle];
     self.contentFrame = (CGRect){{contentX,contentY},contentSize};
     
     
+    CGSize readSize = [self sizeWithFont:otherFont maxW:oriW-imageW str:model.dynamic_info];
+    CGFloat readX = titleX;
+        CGFloat readY = imageW - readSize.height;
     
-        CGFloat readX = titleX;
-        CGFloat readY = CGRectGetMaxY(self.contentFrame)+2*homePedding;
-    CGSize readSize = [self sizeWithFont:otherFont maxW:maxWidth str:model.dynamic_info];
     
     self.dyInfoFrame = (CGRect){{readX,readY},readSize};
     
-    self.maxHight = CGRectGetMaxY(self.dyInfoFrame);
+    oriH = CGRectGetMaxY(self.dyInfoFrame);
+    self.originalFrame =CGRectMake(oriX, oriY, oriW, oriH);
+    
+    self.maxHight = CGRectGetMaxY(self.dyInfoFrame)+oriX;
     }
 
   

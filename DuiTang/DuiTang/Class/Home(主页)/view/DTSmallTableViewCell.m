@@ -16,6 +16,7 @@
 @property (weak ,nonatomic) UILabel *readLabel;
 @property (weak ,nonatomic)UILabel *contentLabel;
 @property (weak ,nonatomic)UILabel *titleLabel;
+@property (weak ,nonatomic) UIView *originView;
 @end
 
 @implementation DTSmallTableViewCell
@@ -32,31 +33,38 @@
 {
     if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        
+        UIView *originView = [[UIView alloc]init];
+        [self.contentView addSubview:originView];
+        originView.backgroundColor = [UIColor whiteColor];
+        self.originView = originView;
+        
         UIImageView *iconImageView = [[UIImageView alloc]init];
-        [self.contentView addSubview:iconImageView];
+        [self.originView addSubview:iconImageView];
         self.iconImageView =iconImageView;
     
         
         UILabel *titleLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:titleLabel];
+        [self.originView addSubview:titleLabel];
         self.titleLabel= titleLabel;
                self.titleLabel.font = titleFont;
         titleLabel.numberOfLines = 0;
-       // titleLabel.textColor = [UIColor blackColor];
+        titleLabel.textColor = [UIColor blackColor];
         
         
         UILabel *contentLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:contentLabel];
+        [self.originView addSubview:contentLabel];
         self.contentLabel= contentLabel;
         contentLabel.numberOfLines = 0;
 
         contentLabel.font = otherFont;
         
         UILabel *readLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:readLabel];
+        [self.originView addSubview:readLabel];
         self.readLabel = readLabel;
               readLabel.font = otherFont;
         readLabel.numberOfLines = 0;
+        self.backgroundColor = [UIColor clearColor];
 
     }
     return self;
@@ -75,18 +83,27 @@
    
     self.contentLabel.text = hModel.stitle;
     self.contentLabel.frame = model.contentFrame;
+    self.contentLabel.textColor = DTGlobalBg;
     
      self.readLabel.text = hModel.dynamic_info;
     self.readLabel.frame = model .dyInfoFrame;
+    self.originView.frame = model.originalFrame;
+    
+   
 }
 
-//-(void)setFrame:(CGRect)frame
-//{
-//    frame.origin.x=12;
-//    frame.origin.y +=12;
-//    frame.size.width-=2*12;
-////    frame.size.height = 12;
-//    [super setFrame:frame];
-//}
 
+-(void)setFrame:(CGRect)frame
+{
+    CGRect rect = frame;
+    frame.origin.x-= 30;
+    
+    [super setFrame:frame];
+    self.backgroundColor = [UIColor whiteColor];
+    [UIView animateWithDuration:1.0 animations:^{
+        [super setFrame:rect];
+    }completion:^(BOOL finished) {
+        self.backgroundColor = [UIColor clearColor];
+    }];
+}
 @end

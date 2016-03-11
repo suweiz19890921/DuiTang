@@ -31,6 +31,12 @@
 {
     _model = model;
     
+    
+    CGFloat oriX = 0;
+    CGFloat oriY = homePedding;
+    CGFloat oriW = mainScreenWidth;
+    CGFloat oriH = 0;
+    
     CGFloat imageW = screenW;
     CGFloat imageH = 180;
     
@@ -58,8 +64,9 @@
 //    CGFloat readY = CGRectGetMaxY(self.contentFrame)+2*homePedding;
 //    CGFloat readW = 100;
 //    self.dyInfoFrame = CGRectMake(readX, readY, readW, readH);
+     self.originalFrame =CGRectMake(oriX, oriY, oriW, oriH);
     
-    self.maxHight = CGRectGetMaxY(self.iconFrame);
+    self.maxHight = CGRectGetMaxY(self.iconFrame)+oriY;
 }
 
 

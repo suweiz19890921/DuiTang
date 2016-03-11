@@ -10,6 +10,7 @@
 #import "DTBaseFrame.h"
 #import "DTBigModel.h"
 @interface DTBigModelFrame : DTBaseFrame
+@property (nonatomic ,assign)CGRect originalFrame;
 @property (nonatomic ,strong)DTBigModel *model;
 
 

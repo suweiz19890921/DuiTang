@@ -39,7 +39,7 @@
     //内容
     CGFloat contentX = fromX;
     CGFloat contentY = CGRectGetMaxY(self.fromLabelFrame)+homePedding;
-    CGSize contentSize = [self sizeWithFont:[UIFont boldSystemFontOfSize:15] maxW:fromW str:discuss.content];
+    CGSize contentSize = [self sizeWithFont:[UIFont boldSystemFontOfSize:15] maxW:fromW-homePedding str:discuss.content];
     self.contentLabelFrame = (CGRect){{contentX,contentY},contentSize};
     
     //图片

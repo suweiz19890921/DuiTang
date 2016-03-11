@@ -180,6 +180,7 @@
 //        make.edges.equalTo(self.view);
 //    }];
     tableView.backgroundColor = [UIColor grayColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView = tableView;
     self.tableView.dataSource = self;
@@ -199,18 +200,22 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
     DTBaseFrame *model = self.dataArray[indexPath.row];
     if ([model isKindOfClass:[DTBigModelFrame class]]) {
         
-        DTBigTableViewCell *cell = [DTBigTableViewCell bigTableViewCellWithTableView:tableView];
+        DTBigTableViewCell* cell = [DTBigTableViewCell bigTableViewCellWithTableView:tableView];
         cell.model=(DTBigModelFrame *)model;
-    }
+        return cell;
+    }else {
 
    DTSmallTableViewCell *cell = [DTSmallTableViewCell smallTableViewCellWithTableView:tableView];
     cell.model = (DTModelFrame *)model;
-    cell.backgroundColor =[UIColor whiteColor];
+    
+        return cell;
     //NSLog(@"%p",cell);
-    return cell;
+    }
+    
 }
 
 
@@ -255,11 +260,11 @@
             NSLog(@"topic");
             
             NSString *disStr = [NSString stringWithFormat:@"%@id=%@%@",disStr1,str,disStr2];
-            NSLog(@"%@",disStr);
-            NSLog(@"%@",str);
+            //NSLog(@"%@",disStr);
+            //NSLog(@"%@",str);
              NSString *discussStr = [NSString stringWithFormat:@"%@id=%@%@",discussStr1,str,discussStr2];
-             NSLog(@"%@",discussStr);
-            NSLog(@"%@",str);
+             //NSLog(@"%@",discussStr);
+            //NSLog(@"%@",str);
             DTDisscussController *disVc = [[DTDisscussController alloc]init];
             disVc.disString = disStr;
             disVc.discussString = discussStr;
@@ -282,6 +287,36 @@
         }
     }
     
+}
+
+
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //配置3D内容
+    CATransform3D transform ;
+    transform = CATransform3DMakeRotation((90.0*M_PI)/180, 0.0, 0.7, 0.4);
+    transform.m34 = 1.0/-600;
+    
+    
+    //设置cell的初始状态
+    cell.layer.shadowColor = [UIColor blackColor].CGColor ;
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    
+    cell.layer.transform = transform;
+    cell.layer.anchorPoint = CGPointMake(0, 0.5);
+    
+    
+    //定义cell的最终状态， 并提交动画
+    [UIView beginAnimations:@"transform" context:NULL];
+    [UIView setAnimationDuration:0.5];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    cell.frame = CGRectMake(0, cell.frame.origin.y,cell.frame.size.width , cell.frame.size.height);
+    
+    [UIView commitAnimations];
 }
 
 //截取字符串

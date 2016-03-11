@@ -72,7 +72,7 @@
     
     self.contentLabel.frame = modelF.msgFrame;
     self.contentLabel.text = detail.msg;
-    self.contentLabel.backgroundColor = [UIColor whiteColor];
+    self.contentLabel.backgroundColor = DTGlobalBg;
     
     
     self.x = 0;

@@ -20,7 +20,7 @@
 #import "DTReusableView.h"
 #import "DTDetailViewController.h"
 
-@interface DTWaterFlowController ()<UICollectionViewDataSource,XMGWaterflowLayoutDelegate,UICollectionViewDelegate>
+@interface DTWaterFlowController ()<UICollectionViewDataSource,XMGWaterflowLayoutDelegate,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic ,weak)UICollectionView *coll;
 @property (nonatomic ,strong)NSMutableArray *modelArray;
 @end
@@ -157,9 +157,33 @@
     return cell;
 }
 
-//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//
+//-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    return self.view.bounds.size;
+//    //配置3D内容
+//    CATransform3D transform ;
+//    transform = CATransform3DMakeRotation((90.0*M_PI)/180, 0.0, 0.7, 0.4);
+//    transform.m34 = 1.0/-600;
+//    
+//    
+//    //设置cell的初始状态
+//    cell.layer.shadowColor = [UIColor blackColor].CGColor ;
+//    cell.layer.shadowOffset = CGSizeMake(10, 10);
+//    cell.alpha = 0;
+//    
+//    cell.layer.transform = transform;
+//    cell.layer.anchorPoint = CGPointMake(0, 0.5);
+//    
+//    
+//    //定义cell的最终状态， 并提交动画
+//    [UIView beginAnimations:@"transform" context:nil];
+//    [UIView setAnimationDuration:0.5];
+//    cell.layer.transform = CATransform3DIdentity;
+//    cell.alpha = 1;
+//    cell.layer.shadowOffset = CGSizeMake(0, 0);
+//    //cell.frame = cell.frame;
+//    
+//    [UIView commitAnimations];
 //}
 
 
@@ -176,64 +200,61 @@
     
     detailVc.urlStr = urlStr;
     detailVc.hidesBottomBarWhenPushed = YES;
-    //NSLog(@"%@",model.cid);
-    //NSLog(@"%@",urlStr);
+
+    
     [self.navigationController pushViewController:detailVc animated:YES];
     
 }
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
 
 
 
-
-//分组头,分组尾视图
-//1.要显示什么的头部视图
-//2.要显示什么样的尾部视图
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    /*
-     UICollectionReusableView * resueView = [[UICollectionReusableView alloc] init];
-     resueView.backgroundColor = [UIColor greenColor];
-     return resueView;
-     */
-    
-    //UICollectionElementKindSectionHeader 分组头
-    //UICollectionElementKindSectionFooter 分组尾
-    UICollectionReusableView * reView = nil;
-    
-    if([kind isEqualToString:UICollectionElementKindSectionHeader])
-    {
-        //注册,分组头
-        [collectionView registerClass:[DTReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
-        //在缓存池中找,是否存在可重用的分组头部视图,如果有返回,如果没有创建一个新的返回
-        reView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-        //设置背景颜色
-        reView.backgroundColor = [UIColor greenColor];
-        
-    }
-    else if ([kind isEqualToString:UICollectionElementKindSectionFooter])
-    {
-        [collectionView registerClass:[DTReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
-        
-        reView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
-        reView.backgroundColor = [UIColor grayColor];
-        
-    }
-    
-    return reView;
-    
-    
-}//end method
-
-//设置分组头部显示的size
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    return CGSizeMake(375, 200);
-}
+//
+//
+////分组头,分组尾视图
+////1.要显示什么的头部视图
+////2.要显示什么样的尾部视图
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+//{
+//    /*
+//     UICollectionReusableView * resueView = [[UICollectionReusableView alloc] init];
+//     resueView.backgroundColor = [UIColor greenColor];
+//     return resueView;
+//     */
+//    
+//    //UICollectionElementKindSectionHeader 分组头
+//    //UICollectionElementKindSectionFooter 分组尾
+//    UICollectionReusableView * reView = nil;
+//    
+//    if([kind isEqualToString:UICollectionElementKindSectionHeader])
+//    {
+//        //注册,分组头
+//        [collectionView registerClass:[DTReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
+//        //在缓存池中找,是否存在可重用的分组头部视图,如果有返回,如果没有创建一个新的返回
+//        reView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+//        //设置背景颜色
+//        reView.backgroundColor = [UIColor greenColor];
+//        
+//    }
+//    else if ([kind isEqualToString:UICollectionElementKindSectionFooter])
+//    {
+//        [collectionView registerClass:[DTReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
+//        
+//        reView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
+//        reView.backgroundColor = [UIColor grayColor];
+//        
+//    }
+//    
+//    return reView;
+//    
+//    
+//}//end method
+//
+////设置分组头部显示的size
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+//{
+//    return CGSizeMake(375, 200);
+//}
 
 
 

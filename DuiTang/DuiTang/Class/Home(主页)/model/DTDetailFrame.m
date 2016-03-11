@@ -69,7 +69,7 @@
     CGFloat conX = nameX;
        NSString *str = [NSString stringWithFormat:@"收集到 %@",album.name];
     CGFloat conY = CGRectGetMaxY(self.nameFrame)+homePedding;
-    CGSize conSize = [self sizeWithFont:titleFont maxW:maxDetailW str:str];
+    CGSize conSize = [self sizeWithFont:titleFont maxW:mainScreenWidth-(2*homePedding)-nameX str:str];
     self.littleContentFrame = (CGRect){{conX,conY},conSize};
     
     //右边的小图片

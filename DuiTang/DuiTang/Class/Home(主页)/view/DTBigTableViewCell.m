@@ -14,6 +14,7 @@
 @property (weak ,nonatomic) UILabel *readLabel;
 @property (weak ,nonatomic)UILabel *contentLabel;
 @property (weak ,nonatomic)UILabel *titleLabel;
+@property (weak ,nonatomic) UIView *originView;
 @end
 @implementation DTBigTableViewCell
 
@@ -33,13 +34,20 @@
 {
     if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        
+        UIView *originView = [[UIView alloc]init];
+        [self.contentView addSubview:originView];
+        originView.backgroundColor = [UIColor whiteColor];
+        self.originView = originView;
+        
+        
         UIImageView *iconImageView = [[UIImageView alloc]init];
-        [self.contentView addSubview:iconImageView];
+        [self.originView addSubview:iconImageView];
         self.iconImageView =iconImageView;
         
         
         UILabel *titleLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:titleLabel];
+        [self.originView addSubview:titleLabel];
         self.titleLabel= titleLabel;
         self.titleLabel.font = titleFont;
         titleLabel.numberOfLines = 0;
@@ -47,7 +55,7 @@
         
         
         UILabel *contentLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:contentLabel];
+        [self.originView addSubview:contentLabel];
         self.contentLabel= contentLabel;
         contentLabel.textColor = [UIColor whiteColor];
         contentLabel.numberOfLines = 0;
@@ -55,10 +63,12 @@
         contentLabel.font = otherFont;
         
         UILabel *readLabel = [[UILabel alloc]init];
-        [self.contentView addSubview:readLabel];
+        [self.originView addSubview:readLabel];
         self.readLabel = readLabel;
         readLabel.font = otherFont;
         readLabel.numberOfLines = 0;
+        
+        self.backgroundColor = [UIColor clearColor];
         
     }
     return self;
@@ -75,12 +85,13 @@
     self.titleLabel.text = hModel.des;
     // NSLog(@"%@",hModel.des);
     self.titleLabel.frame = model.titleFrame;
-    self.titleLabel.textColor = [UIColor redColor];
+    self.titleLabel.textColor = [UIColor whiteColor];
     
     self.contentLabel.text = hModel.stitle;
     self.contentLabel.frame = model.contentFrame;
     self.contentLabel.textColor = [UIColor whiteColor];
 
+    self.originView.frame = model.originalFrame;
     
     self.readLabel.text = hModel.dynamic_info;
     self.readLabel.frame = model .dyInfoFrame;
