@@ -19,6 +19,11 @@
 		4ACD73981C91986000FC57CE /* DTDiscuss.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD73971C91986000FC57CE /* DTDiscuss.m */; };
 		4ACD739B1C91987B00FC57CE /* DTDiscussFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD739A1C91987B00FC57CE /* DTDiscussFrame.m */; };
 		4ACD739E1C919ABE00FC57CE /* DTClub.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD739D1C919ABE00FC57CE /* DTClub.m */; };
+		4ACD73A11C919D5300FC57CE /* DTComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD73A01C919D5300FC57CE /* DTComment.m */; };
+		4ACD73A41C91A28E00FC57CE /* DTDisHeadview.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD73A31C91A28E00FC57CE /* DTDisHeadview.m */; };
+		4ACD73A71C9257AF00FC57CE /* DTCommentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD73A61C9257AF00FC57CE /* DTCommentFrame.m */; };
+		4ACD73AA1C925A3E00FC57CE /* DTHomeCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD73A91C925A3E00FC57CE /* DTHomeCommentCell.m */; };
+		4ACD73AD1C92615B00FC57CE /* DTHomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD73AC1C92615B00FC57CE /* DTHomeTopView.m */; };
 		4AF285541C8DC833008E0AFF /* DTBigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF285531C8DC833008E0AFF /* DTBigModel.m */; };
 		4AF285571C8DCA0B008E0AFF /* DTBigModelFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF285561C8DCA0B008E0AFF /* DTBigModelFrame.m */; };
 		4AF2855A1C8DCD85008E0AFF /* DTBaseFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF285591C8DCD85008E0AFF /* DTBaseFrame.m */; };
@@ -168,6 +173,16 @@
 		4ACD739A1C91987B00FC57CE /* DTDiscussFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTDiscussFrame.m; sourceTree = "<group>"; };
 		4ACD739C1C919ABE00FC57CE /* DTClub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTClub.h; sourceTree = "<group>"; };
 		4ACD739D1C919ABE00FC57CE /* DTClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTClub.m; sourceTree = "<group>"; };
+		4ACD739F1C919D5300FC57CE /* DTComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTComment.h; sourceTree = "<group>"; };
+		4ACD73A01C919D5300FC57CE /* DTComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTComment.m; sourceTree = "<group>"; };
+		4ACD73A21C91A28E00FC57CE /* DTDisHeadview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDisHeadview.h; sourceTree = "<group>"; };
+		4ACD73A31C91A28E00FC57CE /* DTDisHeadview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTDisHeadview.m; sourceTree = "<group>"; };
+		4ACD73A51C9257AF00FC57CE /* DTCommentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCommentFrame.h; sourceTree = "<group>"; };
+		4ACD73A61C9257AF00FC57CE /* DTCommentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCommentFrame.m; sourceTree = "<group>"; };
+		4ACD73A81C925A3E00FC57CE /* DTHomeCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTHomeCommentCell.h; sourceTree = "<group>"; };
+		4ACD73A91C925A3E00FC57CE /* DTHomeCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTHomeCommentCell.m; sourceTree = "<group>"; };
+		4ACD73AB1C92615B00FC57CE /* DTHomeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTHomeTopView.h; sourceTree = "<group>"; };
+		4ACD73AC1C92615B00FC57CE /* DTHomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTHomeTopView.m; sourceTree = "<group>"; };
 		4AF285521C8DC833008E0AFF /* DTBigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTBigModel.h; sourceTree = "<group>"; };
 		4AF285531C8DC833008E0AFF /* DTBigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTBigModel.m; sourceTree = "<group>"; };
 		4AF285551C8DCA0B008E0AFF /* DTBigModelFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTBigModelFrame.h; sourceTree = "<group>"; };
@@ -432,6 +447,10 @@
 		BCB99CDF1C8D770F00194C8B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4ACD739F1C919D5300FC57CE /* DTComment.h */,
+				4ACD73A01C919D5300FC57CE /* DTComment.m */,
+				4ACD73A51C9257AF00FC57CE /* DTCommentFrame.h */,
+				4ACD73A61C9257AF00FC57CE /* DTCommentFrame.m */,
 				4ACD73961C91986000FC57CE /* DTDiscuss.h */,
 				4ACD73971C91986000FC57CE /* DTDiscuss.m */,
 				4ACD739C1C919ABE00FC57CE /* DTClub.h */,
@@ -473,6 +492,12 @@
 		BCB99CE01C8D770F00194C8B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4ACD73A81C925A3E00FC57CE /* DTHomeCommentCell.h */,
+				4ACD73A91C925A3E00FC57CE /* DTHomeCommentCell.m */,
+				4ACD73AB1C92615B00FC57CE /* DTHomeTopView.h */,
+				4ACD73AC1C92615B00FC57CE /* DTHomeTopView.m */,
+				4ACD73A21C91A28E00FC57CE /* DTDisHeadview.h */,
+				4ACD73A31C91A28E00FC57CE /* DTDisHeadview.m */,
 				4ACD737E1C90F71A00FC57CE /* DTDetailHeadView.h */,
 				4ACD737F1C90F71A00FC57CE /* DTDetailHeadView.m */,
 				4ACD73871C91208A00FC57CE /* DTDetailSpecialView.h */,
@@ -1188,6 +1213,7 @@
 				4AF2857F1C8EB398008E0AFF /* XMGWaterflowLayout.m in Sources */,
 				4AF285701C8E9796008E0AFF /* DTHomeWebController.m in Sources */,
 				D1E0E7D71C8D407D00D7DBD7 /* NSString+Trims.m in Sources */,
+				4ACD73AA1C925A3E00FC57CE /* DTHomeCommentCell.m in Sources */,
 				D1E0E7FE1C8D407D00D7DBD7 /* UIView+Screenshot.m in Sources */,
 				D1E0E7F11C8D407D00D7DBD7 /* UINavigationController+BATransitions.m in Sources */,
 				D1E0E7E51C8D407D00D7DBD7 /* UIImage+Capture.m in Sources */,
@@ -1215,15 +1241,18 @@
 				D1E0E7C61C8D407D00D7DBD7 /* NSDate+Helper.m in Sources */,
 				4AF2857C1C8EB0EC008E0AFF /* DTWaterFrame.m in Sources */,
 				D1E0E8001C8D407D00D7DBD7 /* UIView+Shake.m in Sources */,
+				4ACD73A71C9257AF00FC57CE /* DTCommentFrame.m in Sources */,
 				FCD96A371C8D6A4B004C3BC6 /* DTReadModel.m in Sources */,
 				D1E0E7E61C8D407D00D7DBD7 /* UIImage+Color.m in Sources */,
 				D1E0E7F31C8D407D00D7DBD7 /* UINavigationController+JZExtension.m in Sources */,
 				D1E0E7D61C8D407D00D7DBD7 /* NSString+Size.m in Sources */,
+				4ACD73A41C91A28E00FC57CE /* DTDisHeadview.m in Sources */,
 				4ACD73981C91986000FC57CE /* DTDiscuss.m in Sources */,
 				D1E0E7D81C8D407D00D7DBD7 /* NSString+UrlEncode.m in Sources */,
 				D1E0E7E41C8D407D00D7DBD7 /* UIImage+CalculatedSize.m in Sources */,
 				4ACD738C1C913FD700FC57CE /* DTDetailImageView.m in Sources */,
 				4AFF0D9A1C901F6D00BB3D69 /* DTSender.m in Sources */,
+				4ACD73AD1C92615B00FC57CE /* DTHomeTopView.m in Sources */,
 				4AF285541C8DC833008E0AFF /* DTBigModel.m in Sources */,
 				BCB99CED1C8D86A100194C8B /* DTSmallTableViewCell.m in Sources */,
 				D1E0E7F41C8D407D00D7DBD7 /* UINavigationItem+Loading.m in Sources */,
@@ -1267,6 +1296,7 @@
 				D1E0E7CF1C8D407D00D7DBD7 /* NSObject+GCD.m in Sources */,
 				D1E0E7FA1C8D407D00D7DBD7 /* UIView+Border.m in Sources */,
 				D1E0E7FC1C8D407D00D7DBD7 /* UIView+draggable.m in Sources */,
+				4ACD73A11C919D5300FC57CE /* DTComment.m in Sources */,
 				D1E0E7D11C8D407D00D7DBD7 /* NSObject+Property.m in Sources */,
 				4ACD73831C91076300FC57CE /* DTDetailContentView.m in Sources */,
 				4AF2856C1C8E6438008E0AFF /* DTHeadCell.m in Sources */,

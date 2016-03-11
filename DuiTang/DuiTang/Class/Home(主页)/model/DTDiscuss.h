@@ -3,24 +3,25 @@
 //  DuiTang
 //
 //  Created by 苏威 on 16/3/10.
-//  Copyright © 2016年 Monky. All rights reserved.
+//  strongright © 2016年 Monky. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "DTSender.h"
+#import "DTClub.h"
 
 @interface DTDiscuss : NSObject
-@property (copy ,nonatomic) NSString * active_time;
-@property (copy ,nonatomic) NSString * add_datetime_ts;
-@property (copy ,nonatomic) NSString * category;
-@property (copy ,nonatomic) NSString * club;
-@property (copy ,nonatomic) NSString * comment_count;
-@property (copy ,nonatomic) NSString * content;
-@property (copy ,nonatomic) NSString * cid;
-@property (copy ,nonatomic) NSArray * photos;
-@property (copy ,nonatomic) DTSender * sender;
-@property (copy ,nonatomic) NSString * share_links;
-@property (copy ,nonatomic) NSString * visit_count;
+@property (strong ,nonatomic) NSString * active_time;
+@property (strong ,nonatomic) NSString * add_datetime_ts;
+@property (strong ,nonatomic) NSString * category;
+@property (strong ,nonatomic) DTClub * club;
+@property (strong ,nonatomic) NSString * comment_count;
+@property (strong ,nonatomic) NSString * content;
+@property (strong ,nonatomic) NSString * cid;
+@property (strong ,nonatomic) NSArray * photos;
+@property (strong ,nonatomic) DTSender * sender;
+@property (strong ,nonatomic) NSString * share_links;
+@property (strong ,nonatomic) NSString * visit_count;
 
 
 @end

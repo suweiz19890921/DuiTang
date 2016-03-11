@@ -17,6 +17,7 @@
 #import "DTHeadViewController.h"
 #import "DTHomeWebController.h"
 #import "DTWaterFlowController.h"
+#import "DTDisscussController.h"
 
 
 #import "DTHomeModel.h"
@@ -58,6 +59,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
        self.view.backgroundColor = [UIColor colorWithRed:0.480 green:0.758 blue:1.000 alpha:1.000];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setupTableView];
     [self setupHeadView];
@@ -88,6 +90,8 @@
     self.tableView.tableHeaderView = hVc.view;
     
 }
+
+//加载更多数据，还没有完善接口
 -(void)loadMoreData
 {
    // NSLog(@"loadMoreData  loadMoreData");
@@ -180,7 +184,7 @@
     self.tableView = tableView;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
     
 }
 
@@ -243,14 +247,29 @@
     }else {
         DTModelFrame *modelF = (DTModelFrame *)modelFrame;
         DTHomeModel *model = modelF.model;
+        
+        NSString *str = [self stringWithSourceString:model.target];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //从模型的target中截取字符串
         if ([model.content_type isEqualToString:@"topic"]) {
             NSLog(@"topic");
+            
+            NSString *disStr = [NSString stringWithFormat:@"%@id=%@%@",disStr1,str,disStr2];
+            NSLog(@"%@",disStr);
+            NSLog(@"%@",str);
+             NSString *discussStr = [NSString stringWithFormat:@"%@id=%@%@",discussStr1,str,discussStr2];
+             NSLog(@"%@",discussStr);
+            NSLog(@"%@",str);
+            DTDisscussController *disVc = [[DTDisscussController alloc]init];
+            disVc.disString = disStr;
+            disVc.discussString = discussStr;
+            disVc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:disVc animated:YES];
+            
+            
         }else {
     
-    
-    NSString *str = [self stringWithSourceString:model.target];
+
     
     
     NSString *waterStr = [NSString stringWithFormat:@"%@id=%@%@",str1,str,str3];

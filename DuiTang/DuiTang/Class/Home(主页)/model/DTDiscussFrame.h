@@ -10,4 +10,15 @@
 @class DTDiscuss;
 @interface DTDiscussFrame : NSObject
 @property (nonatomic ,strong)DTDiscuss *discuss;
+
+
+@property (assign ,nonatomic)CGRect fromLabelFrame;
+@property (assign ,nonatomic)CGRect contentLabelFrame;
+@property (assign ,nonatomic)CGRect iconFrame;
+@property (assign ,nonatomic)CGRect nameLabelFrame;
+@property (assign ,nonatomic)CGRect timeLabelFrame;
+@property (assign ,nonatomic)CGRect seeCountLabelFrame;
+
+@property (assign ,nonatomic)CGFloat maxHight;
+
 @end

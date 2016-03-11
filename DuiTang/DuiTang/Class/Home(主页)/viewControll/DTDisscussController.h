@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DTDisscussController : UIViewController
-
+@property (nonatomic ,strong)NSString *disString;
+@property (nonatomic ,strong)NSString *discussString;
 @end

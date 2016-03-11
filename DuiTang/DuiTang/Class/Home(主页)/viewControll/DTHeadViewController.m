@@ -72,11 +72,15 @@
     pageControll.currentPageIndicatorTintColor = [UIColor redColor];
     pageControll.pageIndicatorTintColor = [UIColor grayColor];
     self.pageControll = pageControll;
+    self.pageControll.hidden = self.modelArray.count<=1;
 }
 //配置定时器
 
 -(void)addTimer
 {
+    if (self.modelArray.count<=1) {
+        return;
+    }
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
