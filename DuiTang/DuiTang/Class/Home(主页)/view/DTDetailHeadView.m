@@ -36,12 +36,12 @@
         
         DTDetailContentView *contentView = [[DTDetailContentView alloc]init];
         [self addSubview:contentView];
+        contentView.backgroundColor = [UIColor grayColor];
         self.contentView = contentView;
-        contentView.backgroundColor = [UIColor yellowColor];
         
         UILabel *contentLabel = [[UILabel alloc] init];
         [self addSubview:contentLabel];
-        contentLabel.backgroundColor = [UIColor blueColor];
+   
         contentLabel.numberOfLines = 0;
         contentLabel.font = titleFont;
         self.contentLabel = contentLabel;
@@ -50,7 +50,7 @@
         [self addSubview:defineLabel];
         self.defineLabel = defineLabel;
         
-        
+        self.backgroundColor = DTGlobalBg;
     }
     return self;
 }
@@ -72,11 +72,12 @@
     
     self.contentLabel.frame = modelF.msgFrame;
     self.contentLabel.text = detail.msg;
+    self.contentLabel.backgroundColor = [UIColor whiteColor];
     
     
     self.x = 0;
     self.y = 0;
-    self.height = CGRectGetMaxY(self.contentLabel.frame);
-    self.width = mainScreenWidth -2*homePedding;
+    self.height = CGRectGetMaxY(self.contentLabel.frame)+homePedding;
+    self.width = mainScreenWidth;
 }
 @end

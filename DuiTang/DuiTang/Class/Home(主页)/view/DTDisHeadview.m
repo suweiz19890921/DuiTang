@@ -38,9 +38,9 @@
         
         UILabel *contentLabel = [[UILabel alloc] init];
         [self addSubview:contentLabel];
-        contentLabel.backgroundColor = [UIColor blueColor];
+        contentLabel.textColor = [UIColor blackColor];
         contentLabel.numberOfLines = 0;
-        contentLabel.font = titleFont;
+        contentLabel.font = [UIFont boldSystemFontOfSize:15];
         self.contentLabel = contentLabel;
         
         UIImageView *iconImage = [[UIImageView alloc]init];
@@ -113,5 +113,12 @@
     
     self.height = discussF.maxHight;
     
+}
+-(void)setFrame:(CGRect)frame
+{
+    
+    frame.origin.x+=homePedding;
+    frame.size.width-=(2*homePedding);
+    [super setFrame:frame];
 }
 @end

@@ -53,11 +53,12 @@ static DTNetHelper * _shareManager;
             case AFNetworkReachabilityStatusReachableViaWWAN: {
                 
                 
+                NSLog(@"手机网络");
                 break;
             }
             case AFNetworkReachabilityStatusReachableViaWiFi: {
                 
-                
+                NSLog(@"WIFI网络");
                 break;
             }
         }

@@ -40,8 +40,10 @@
     
     // Do any additional setup after loading the view.
     [self loadData];
-    [self setupColltionView];
+    
+     [self setupColltionView];
     [self setupRefresh];
+    
 }
 
 -(void)setupRefresh
@@ -70,7 +72,7 @@
     coll.dataSource = self;
     coll.delegate = self ;
     
-    
+   
 }
 
 
@@ -98,6 +100,7 @@
                 [self.coll.mj_header endRefreshing];
                 [self.modelArray addObjectsFromArray:marr];
                 
+           
                 [self.coll reloadData];
                 
             });
@@ -115,6 +118,7 @@
 -(CGFloat)waterflowLayout:(XMGWaterflowLayout *)waterflowLayout heightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth
 
 {
+   
     DTWaterFrame *model = self.modelArray [index];
         return model.maxHight;
 }

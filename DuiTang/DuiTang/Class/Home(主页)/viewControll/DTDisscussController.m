@@ -43,7 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = DTGlobalBg;
     [self loadData];
     [self setupTableView];
   
@@ -122,7 +122,7 @@
 
 -(void)setupTableView
 {
-    UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.y = 64;
     tableView.size = self.view.size;
     [self.view addSubview:tableView];
@@ -130,7 +130,7 @@
     //    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
     //        make.edges.equalTo(self.view);
     //    }];
-    tableView.backgroundColor = [UIColor whiteColor];
+    tableView.backgroundColor = DTGlobalBg;
     tableView.autoresizingMask = UIViewAutoresizingNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
 
@@ -143,7 +143,7 @@
 -(void)setupHeadView
 {
     DTDisHeadview *headView = [[DTDisHeadview alloc]init];
-    headView.backgroundColor = [UIColor redColor];
+    headView.backgroundColor = [UIColor whiteColor];
     headView.height = self.discussF.maxHight;
     headView.discussF = self.discussF;
     self.tableView.tableHeaderView = headView;

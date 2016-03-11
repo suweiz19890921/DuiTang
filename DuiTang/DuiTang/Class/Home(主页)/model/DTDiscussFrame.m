@@ -39,7 +39,7 @@
     //内容
     CGFloat contentX = fromX;
     CGFloat contentY = CGRectGetMaxY(self.fromLabelFrame)+homePedding;
-    CGSize contentSize = [self sizeWithFont:titleFont maxW:fromW str:discuss.content];
+    CGSize contentSize = [self sizeWithFont:[UIFont boldSystemFontOfSize:15] maxW:fromW str:discuss.content];
     self.contentLabelFrame = (CGRect){{contentX,contentY},contentSize};
     
     //图片
@@ -81,7 +81,7 @@
     NSString *countStr = [NSString stringWithFormat:@"游览 %@次",discuss.visit_count];
     
     CGSize seeSize = [self sizeWithFont:[UIFont systemFontOfSize:14] maxW:fromW str:countStr];
-    CGFloat seeX = mainScreenWidth-homePedding - seeSize.width ;
+    CGFloat seeX = mainScreenWidth-homePedding - seeSize.width-homePedding ;
     CGFloat seeY = timeY;
     self.seeCountLabelFrame = (CGRect){{seeX,seeY},seeSize};
     

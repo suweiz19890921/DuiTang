@@ -52,6 +52,7 @@
     //专辑视图
     DTDetailSpecialView *specialView = [[DTDetailSpecialView alloc]init];
     [self.scrollView addSubview:specialView];
+    scrollView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
     specialView.model = self.detailF;
 
     
