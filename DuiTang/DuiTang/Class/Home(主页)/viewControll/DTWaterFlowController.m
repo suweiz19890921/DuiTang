@@ -19,7 +19,7 @@
 // 我是苏威 做的标记
 #import "DTReusableView.h"
 #import "DTDetailViewController.h"
-
+//到底是怎样合并的呢
 @interface DTWaterFlowController ()<UICollectionViewDataSource,XMGWaterflowLayoutDelegate,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic ,weak)UICollectionView *coll;
 @property (nonatomic ,strong)NSMutableArray *modelArray;
